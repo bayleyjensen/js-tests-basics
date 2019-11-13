@@ -7,7 +7,52 @@
 // output: 7
 
 function daysPosition(day, offset) {
-    if 
+  switch (day) {
+    case "sunday":
+      if (offset == true) {
+        return 7;
+      } else {
+        return 1;
+      }
+    case "monday":
+      if (offset == true) {
+        return 1;
+      } else {
+        return 2;
+      }
+    case "tuesday":
+      if (offset == true) {
+        return 2;
+      } else {
+        return 3;
+      }
+    case "wednesday":
+      if (offset == true) {
+        return 3;
+      } else {
+        return 4;
+      }
+    case "thursday":
+      if (offset == true) {
+        return 4;
+      } else {
+        return 5;
+      }
+    case "friday":
+      if (offset == true) {
+        return 5;
+      } else {
+        return 6;
+      }
+    case "saturday":
+      if (offset == true) {
+        return 6;
+      } else {
+        return 7;
+      }
+    default:
+      return "That's not a day of the week";
+  }
 }
 
 // --------------------------------------------
@@ -69,4 +114,34 @@ function golfScore(score, par) {
 
 let count = 0;
 
-function cardCounter(card) {}
+function cardCounter(card) {
+  console.log(count);
+  console.log(card);
+  switch (card) {
+    case "A":
+    case "K":
+    case "Q":
+    case "J":
+    case "10":
+      count--;
+      break;
+    case "7":
+    case "8":
+    case "9":
+      break;
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6":
+      count++;
+
+    default:
+      break;
+  }
+  if (count >= 1) {
+    return count + " Bet";
+  } else if (count <= 0) {
+    return count + " Hold";
+  }
+}
